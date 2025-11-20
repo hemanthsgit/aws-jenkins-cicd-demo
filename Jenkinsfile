@@ -61,7 +61,7 @@ pipeline {
         stage('Deploy to EC2') {
             steps {
                 sshagent (credentials: ['app-server-key']) {
-                    sh '''
+                    sh """
                         echo "Deploying on EC2..."
 
                         ssh -o StrictHostKeyChecking=no ${APP_SERVER_HOST} '
@@ -75,7 +75,7 @@ pipeline {
 
                             docker run -d --name myapp -p 80:3000 ${IMAGE_NAME}:latest
                         '
-                    '''
+                    """
                 }
             }
         }
