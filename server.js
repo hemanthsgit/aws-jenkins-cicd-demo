@@ -3,7 +3,7 @@ const app = express();
 const port = 3000;
 
 app.get('/', (req, res) => {
-  res.send('Hello from CI/CD on AWS via Jenkins & Docker new!');
+  res.send('Hello from CI/CD on AWS via Jenkins & Docker neww new!');
 });
 
 app.listen(port, () => {
